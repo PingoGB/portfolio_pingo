@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Funções auxiliares
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    // Por simplicidade e conforme pedido (senha constante no código), 
+    // não estamos usando Auth do Firebase obrigatoriamente para leitura pública.
+    // Mas para escrita, restringiremos ou usaremos uma lógica de "admin" se necessário.
+    // Como o prompt pede senha constante no código para o painel admin, a segurança 
+    // real viria de uma Cloud Function ou Auth, mas aqui faremos regras básicas 
+    // permitindo leitura pública e escrita autenticada ou aberta (se o usuário não configurar Auth).
+    
+    // ATENÇÃO: Em produção, estas regras devem ser restritas.
+    match /{document=**} {
+      allow read: if true;
+      allow write: if true; // No ambiente do AI Studio, permitimos para facilitar, mas avisamos o usuário.
+    }
+  }
+}

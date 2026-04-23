@@ -1,11 +1,39 @@
-<div align="center">
+# Portfólio Escolar - Arthur Gabriel
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Este é um portfólio escolar profissional desenvolvido em React + Vite, com um design inspirado na interface do **DaVinci Resolve**.
 
-  <h1>Built with AI Studio</h2>
+## 🚀 Tecnologias Utilizadas
+- **React 19**
+- **Tailwind CSS** (Estilização profissional)
+- **Framer Motion** (Animações de software)
+- **Lucide React** (Ícones)
+- **Firebase Firestore** (Banco de dados em tempo real)
+- **Firebase Storage** (Armazenamento de imagens)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## ⚙️ Configuração do Firebase
+O projeto já foi inicializado com a infraestrutura do AI Studio. Caso precise replicar:
+1. Crie um projeto no [Console do Firebase](https://console.firebase.google.com/).
+2. Ative o **Firestore Database** e o **Storage**.
+3. Copie as credenciais e cole no arquivo `firebase-applet-config.json`.
+4. Defina as regras de segurança no arquivo `firestore.rules`.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🔒 Painel Administrativo
+Para acessar o modo de edição:
+1. Role até o rodapé do site.
+2. Clique no ícone de **cadeado** discreto.
+3. Insira a senha: **arthur2026** (isso pode ser alterado no arquivo `src/components/AdminPanel.tsx`).
 
-</div>
+No modo Admin, você pode:
+- Adicionar atividades com embeds (Padlet, Slides, YouTube) ou upload de fotos.
+- Gerenciar a galeria de fotos pessoal.
+- Editar descrições e justificativas.
+
+## 📦 Deploy
+Para fazer o deploy na **Vercel** ou **Netlify**:
+1. Conecte seu repositório GitHub.
+2. Use o comando de build: `npm run build`.
+3. Diretório de saída: `dist`.
+4. Adicione as variáveis de ambiente necessárias (se houver).
+
+---
+Desenvolvido com carinho para o futuro desenvolvedor Arthur Gabriel. 🚀

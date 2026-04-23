@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Activity": {
+      "title": "Activity",
+      "description": "Uma atividade escolar ou técnica",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "trimester": { "type": "number" },
+        "description": { "type": "string" },
+        "contentUrl": { "type": "string" },
+        "contentType": { "type": "string", "enum": ["image", "iframe"] },
+        "originTag": { "type": "string", "enum": ["Indicada pelo professor", "Escolha do estudante"] },
+        "area": { "type": "string", "enum": ["Matemática", "Humanas", "Linguagens", "Natureza", "TDES"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "trimester", "description", "contentUrl", "contentType", "originTag", "area"]
+    },
+    "Profile": {
+      "title": "Profile",
+      "description": "Dados do estudante",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "city": { "type": "string" },
+        "personality": { "type": "string" },
+        "bio": { "type": "string" },
+        "goals": { "type": "string" },
+        "professionalGoals": { "type": "string" },
+        "hobbies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "GalleryImage": {
+      "title": "GalleryImage",
+      "description": "Fotos da galeria",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string" },
+        "description": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "activities": {
+      "schema": "Activity",
+      "description": "Coleção de atividades do portfólio"
+    },
+    "profiles": {
+      "schema": "Profile",
+      "description": "Informações do perfil (geralmente apenas um documento)"
+    },
+    "gallery": {
+      "schema": "GalleryImage",
+      "description": "Fotos da galeria de imagens"
+    }
+  }
+}
