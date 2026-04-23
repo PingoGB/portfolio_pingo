@@ -59,7 +59,7 @@ export default function ActivityCard({ activity, isAdmin, onDelete, onEdit }: Ac
             src={activity.contentUrl} 
             alt={activity.title} 
             className="w-full h-full object-contain"
-            referrerPolicy="no-referrer"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 relative">
