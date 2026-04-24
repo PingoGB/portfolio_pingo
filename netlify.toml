@@ -1,0 +1,4 @@
+[build]
+  base = "portfolio_pingo"
+  command = "npm run build"
+  publish = "portfolio_pingo/dist"
