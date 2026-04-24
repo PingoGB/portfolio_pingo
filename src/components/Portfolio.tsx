@@ -195,7 +195,7 @@ export default function Portfolio() {
                     <div className="flex gap-6 items-start">
                       <div className="w-32 h-32 bg-[#0a0a0d] border border-resolve-gold/30 rounded-sm flex items-center justify-center overflow-hidden group">
                         <img 
-                          src="/eu.png" 
+                          src="https://i.imgur.com/PyCHhXL.png" 
                           alt={profile.name} 
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
