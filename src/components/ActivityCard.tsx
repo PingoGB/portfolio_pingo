@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Activity, ContentType, OriginTag } from "../types";
-import { ExternalLink, User, BookOpen, Trash2, Edit, FileText, Video as VideoIcon, Palette, Code as CodeIcon, Presentation, Box } from "lucide-react";
-import { motion } from "motion/react";
+import { ExternalLink, User, BookOpen, Trash2, Edit, FileText, Video as VideoIcon, Palette, Code as CodeIcon, Presentation, Box, ChevronDown, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 interface ActivityCardProps {
   activity: Activity;
@@ -12,6 +12,7 @@ interface ActivityCardProps {
 }
 
 export default function ActivityCard({ activity, isAdmin, onDelete, onEdit }: ActivityCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const isImage = activity.contentType === 'image';
   
   const getIconForType = (type: ContentType) => {
@@ -108,9 +109,22 @@ export default function ActivityCard({ activity, isAdmin, onDelete, onEdit }: Ac
           {activity.title}
         </h3>
         
-        <div className="text-white/40 text-[9px] mb-3 line-clamp-2 leading-relaxed">
+        <div className={`text-white/40 text-[9px] leading-relaxed transition-all duration-300 ${isExpanded ? '' : 'line-clamp-2 mb-3'}`}>
           {activity.description}
         </div>
+
+        {activity.description.length > 60 && (
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-[8px] text-resolve-gold/60 hover:text-resolve-gold uppercase font-black tracking-widest flex items-center gap-1 mb-3 mt-1"
+          >
+            {isExpanded ? (
+              <>Recolher <ChevronUp size={8} /></>
+            ) : (
+              <>Ver mais <ChevronDown size={8} /></>
+            )}
+          </button>
+        )}
 
         <div className="mt-auto pt-2 border-t border-white/5 flex justify-between items-center">
           <span className="text-[8px] uppercase tracking-tighter text-white/20 font-black">

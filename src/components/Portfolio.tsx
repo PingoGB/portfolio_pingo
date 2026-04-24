@@ -70,10 +70,11 @@ export default function Portfolio() {
   };
 
   const areas: Area[] = ['Matemática', 'Humanas', 'Linguagens', 'Natureza'];
+  const tdesAreas: Area[] = ['Modelagem de Sistemas', 'Banco de Dados', 'IoT', 'Desenvolvimento de Sistemas', 'GRAND PRIX'];
   const trimesters = [1, 2, 3];
 
   const filteredActivities = activities.filter(a => {
-    if (activeTab === 'tdes') return a.area === 'TDES' && a.trimester === activeTrimester;
+    if (activeTab === 'tdes') return a.area === activeArea && a.trimester === activeTrimester;
     if (activeTab === 'ensino-medio') return a.area === activeArea && a.trimester === activeTrimester;
     return false;
   });
@@ -93,13 +94,19 @@ export default function Portfolio() {
               Início
             </button>
             <button 
-              onClick={() => setActiveTab('ensino-medio')}
+              onClick={() => {
+                setActiveTab('ensino-medio');
+                setActiveArea('Matemática');
+              }}
               className={`resolve-tab ${activeTab === 'ensino-medio' ? 'active' : ''}`}
             >
               Ensino Médio
             </button>
             <button 
-              onClick={() => setActiveTab('tdes')}
+              onClick={() => {
+                setActiveTab('tdes');
+                setActiveArea('Modelagem de Sistemas');
+              }}
               className={`resolve-tab ${activeTab === 'tdes' ? 'active' : ''}`}
             >
               TDES
@@ -155,9 +162,24 @@ export default function Portfolio() {
                   </button>
                 ))
               ) : activeTab === 'tdes' ? (
-                <div className="p-2 bg-resolve-teal/10 text-resolve-teal border border-resolve-teal/20 rounded-sm text-[11px] font-bold flex items-center gap-2">
-                  <Terminal size={14} /> TDES Ativo
-                </div>
+                tdesAreas.map(area => (
+                  <button
+                    key={area}
+                    onClick={() => setActiveArea(area)}
+                    className={`w-full text-left p-2 rounded-sm text-[11px] font-medium transition-all flex items-center gap-2 ${
+                      activeArea === area ? 'bg-resolve-teal text-resolve-bg' : 'text-white/50 hover:bg-white/5'
+                    }`}
+                  >
+                    <span className="opacity-50">
+                      {area === 'Modelagem de Sistemas' && '📊'}
+                      {area === 'Banco de Dados' && '🗄️'}
+                      {area === 'IoT' && '🔌'}
+                      {area === 'Desenvolvimento de Sistemas' && '💻'}
+                      {area === 'GRAND PRIX' && '🏎️'}
+                    </span>
+                    {area}
+                  </button>
+                ))
               ) : (
                 <div className="p-2 bg-white/5 text-white/50 rounded-sm text-[11px]">
                   Página de Perfil
@@ -278,7 +300,7 @@ export default function Portfolio() {
                 >
                   <div className="flex items-center justify-between border-b border-resolve-border pb-4 mb-4">
                     <h2 className="text-lg font-black text-white uppercase tracking-tighter">
-                      {activeTab === 'tdes' ? 'Project: Technical Development' : `Area: ${activeArea}`}
+                      {activeTab === 'tdes' ? `Técnico: ${activeArea}` : `Area: ${activeArea}`}
                     </h2>
                     <div className="flex gap-2 items-center">
                       <span className="text-[10px] uppercase font-bold text-resolve-gold bg-resolve-gold/10 px-2 py-0.5 border border-resolve-gold/20">

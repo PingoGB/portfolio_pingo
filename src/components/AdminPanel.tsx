@@ -44,7 +44,7 @@ export default function AdminPanel({
     contentUrl: "",
     contentType: "other",
     originTag: "Escolha do estudante",
-    area: activeTab === 'ensino-medio' ? activeArea : 'TDES'
+    area: activeTab === 'ensino-medio' ? activeArea : (activeTab === 'tdes' ? activeArea : 'Matemática')
   };
 
   const [formData, setFormData] = useState<Partial<Activity>>(defaultFormData);
@@ -60,7 +60,7 @@ export default function AdminPanel({
         description: editingActivity.description || "",
         contentUrl: editingActivity.contentUrl || "",
         trimester: editingActivity.trimester || activeTrimester,
-        area: editingActivity.area || (activeTab === 'ensino-medio' ? activeArea : 'TDES'),
+        area: editingActivity.area || (activeTab === 'ensino-medio' ? activeArea : (activeTab === 'tdes' ? activeArea : 'Matemática')),
         contentType: editingActivity.contentType || "other",
         originTag: editingActivity.originTag || "Escolha do estudante"
       });
@@ -285,17 +285,25 @@ export default function AdminPanel({
                   </div>
 
                   <div>
-                    <label className="block text-[9px] uppercase font-black text-white/30 mb-1 tracking-widest">Área</label>
+                    <label className="block text-[9px] uppercase font-black text-white/30 mb-1 tracking-widest">Área / Matéria</label>
                     <select 
                       value={formData.area} 
                       onChange={(e) => setFormData({...formData, area: e.target.value as Area})}
                       className="resolve-input w-full py-2"
                     >
-                      <option value="Matemática">Matemática</option>
-                      <option value="Humanas">Humanas</option>
-                      <option value="Linguagens">Linguagens</option>
-                      <option value="Natureza">Natureza</option>
-                      <option value="TDES">TDES (Técnico)</option>
+                      <optgroup label="Ensino Médio">
+                        <option value="Matemática">Matemática</option>
+                        <option value="Humanas">Humanas</option>
+                        <option value="Linguagens">Linguagens</option>
+                        <option value="Natureza">Natureza</option>
+                      </optgroup>
+                      <optgroup label="Curso Técnico (TDES)">
+                        <option value="Modelagem de Sistemas">Modelagem de Sistemas</option>
+                        <option value="Banco de Dados">Banco de Dados</option>
+                        <option value="IoT">IoT</option>
+                        <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                        <option value="GRAND PRIX">GRAND PRIX</option>
+                      </optgroup>
                     </select>
                   </div>
 

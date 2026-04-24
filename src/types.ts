@@ -1,4 +1,14 @@
-export type Area = 'Matemática' | 'Humanas' | 'Linguagens' | 'Natureza' | 'TDES';
+export type Area = 
+  | 'Matemática' 
+  | 'Humanas' 
+  | 'Linguagens' 
+  | 'Natureza' 
+  | 'TDES' 
+  | 'Modelagem de Sistemas' 
+  | 'Banco de Dados' 
+  | 'IoT' 
+  | 'Desenvolvimento de Sistemas' 
+  | 'GRAND PRIX';
 export type ContentType = 'image' | 'video' | 'docs' | 'canva' | 'code' | 'other';
 export type OriginTag = 'Indicada pelo professor' | 'Escolha do estudante';
 
