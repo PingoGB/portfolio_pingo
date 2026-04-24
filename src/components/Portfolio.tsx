@@ -222,7 +222,7 @@ export default function Portfolio() {
                           <div className="space-y-2">
                             <div className="aspect-[4/3] bg-black rounded-sm overflow-hidden border border-white/5 relative group">
                               <img 
-                                src="/rock.png" 
+                                src="https://i.imgur.com/aoTwLnj.png" 
                                 alt="Rock" 
                                 className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110" 
                               />
@@ -232,7 +232,7 @@ export default function Portfolio() {
                           <div className="space-y-2">
                             <div className="aspect-[4/3] bg-black rounded-sm overflow-hidden border border-white/5 relative group">
                               <img 
-                                src="/meus amigos.jpg" 
+                                src="https://i.imgur.com/7kViOsK.jpeg" 
                                 alt="Amigos" 
                                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" 
                               />
