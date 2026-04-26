@@ -18,7 +18,8 @@ import {
   Monitor,
   Search,
   User,
-  Plus
+  Plus,
+  FileText
 } from 'lucide-react';
 
 export default function Portfolio() {
@@ -228,8 +229,18 @@ export default function Portfolio() {
                           {profile.name}
                         </h1>
                         <p className="text-[11px] text-white/40 uppercase font-black tracking-widest">{profile.city} • {profile.age} ANOS</p>
-                        <div className="mt-4 p-3 bg-white/5 border-l-2 border-resolve-gold text-[11px] text-resolve-gold font-bold animate-pulse">
-                          // BEM-VINDO AO MEU WORKSPACE CRIATIVO
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          <div className="p-3 bg-white/5 border-l-2 border-resolve-gold text-[11px] text-resolve-gold font-bold flex-1">
+                            // BEM-VINDO AO MEU WORKSPACE CRIATIVO
+                          </div>
+                          <a 
+                            href="https://docs.google.com/document/d/1-v7VZzDUMyw4xUbnPdPXpUKL7sVWzWyx6tqB60qcWO0/edit?usp=sharing" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 bg-resolve-gold text-resolve-bg text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform"
+                          >
+                            <FileText size={14} /> Ver Currículo
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -391,7 +402,7 @@ export default function Portfolio() {
       {/* Timeline (Bottom Bar) */}
       <footer className="timeline">
         <div className="flex justify-between items-center px-1">
-          <label className="track-label m-0">Master Academic Timeline</label>
+          <label className="track-label m-0">TRIMESTERS TIMELINES</label>
           <div className="flex gap-4 font-mono text-xs text-resolve-gold">
             <span>0{activeTrimester}:00:23:14</span>
             <span className="text-white/20">/</span>
