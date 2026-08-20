@@ -71,7 +71,7 @@ export default function Portfolio() {
   };
 
   const areas: Area[] = ['Matemática', 'Humanas', 'Linguagens', 'Natureza'];
-  const tdesAreas: Area[] = ['Modelagem de Sistemas', 'Banco de Dados', 'IoT', 'Desenvolvimento de Sistemas', 'GRAND PRIX'];
+  const tdesAreas: Area[] = ['Modelagem de Sistemas', 'Banco de Dados', 'IoT', 'Desenvolvimento de Sistemas', 'Programação de Aplicativos', 'GRAND PRIX'];
   const trimesters = [1, 2, 3];
 
   const filteredActivities = activities.filter(a => {
@@ -176,6 +176,7 @@ export default function Portfolio() {
                       {area === 'Banco de Dados' && '🗄️'}
                       {area === 'IoT' && '🔌'}
                       {area === 'Desenvolvimento de Sistemas' && '💻'}
+                      {area === 'Programação de Aplicativos' && '📱'}
                       {area === 'GRAND PRIX' && '🏎️'}
                     </span>
                     {area}

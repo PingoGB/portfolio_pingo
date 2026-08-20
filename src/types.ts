@@ -8,6 +8,7 @@ export type Area =
   | 'Banco de Dados' 
   | 'IoT' 
   | 'Desenvolvimento de Sistemas' 
+  | 'Programação de Aplicativos'
   | 'GRAND PRIX';
 export type ContentType = 'image' | 'video' | 'docs' | 'canva' | 'code' | 'other';
 export type OriginTag = 'Indicada pelo professor' | 'Escolha do estudante';

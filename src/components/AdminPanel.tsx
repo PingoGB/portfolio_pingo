@@ -302,6 +302,7 @@ export default function AdminPanel({
                         <option value="Banco de Dados">Banco de Dados</option>
                         <option value="IoT">IoT</option>
                         <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                        <option value="Programação de Aplicativos">Programação de Aplicativos</option>
                         <option value="GRAND PRIX">GRAND PRIX</option>
                       </optgroup>
                     </select>
