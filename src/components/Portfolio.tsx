@@ -19,7 +19,9 @@ import {
   Search,
   User,
   Plus,
-  FileText
+  FileText,
+  Folder,
+  ExternalLink
 } from 'lucide-react';
 
 export default function Portfolio() {
@@ -71,7 +73,7 @@ export default function Portfolio() {
   };
 
   const areas: Area[] = ['Matemática', 'Humanas', 'Linguagens', 'Natureza'];
-  const tdesAreas: Area[] = ['Modelagem de Sistemas', 'Banco de Dados', 'IoT', 'Desenvolvimento de Sistemas', 'Programação de Aplicativos', 'GRAND PRIX'];
+  const tdesAreas: Area[] = ['Modelagem de Sistemas', 'Banco de Dados', 'IoT', 'Desenvolvimento de Sistemas', 'Programação de Aplicativos', 'Manutenção de Sistemas', 'Teste de Sistemas', 'GRAND PRIX'];
   const trimesters = [1, 2, 3];
 
   const filteredActivities = activities.filter(a => {
@@ -177,6 +179,8 @@ export default function Portfolio() {
                       {area === 'IoT' && '🔌'}
                       {area === 'Desenvolvimento de Sistemas' && '💻'}
                       {area === 'Programação de Aplicativos' && '📱'}
+                      {area === 'Manutenção de Sistemas' && '🛠️'}
+                      {area === 'Teste de Sistemas' && '🧪'}
                       {area === 'GRAND PRIX' && '🏎️'}
                     </span>
                     {area}
@@ -231,16 +235,40 @@ export default function Portfolio() {
                         </h1>
                         <p className="text-[11px] text-white/40 uppercase font-black tracking-widest">{profile.city} • {profile.age} ANOS</p>
                         <div className="mt-4 flex flex-wrap gap-2">
-                          <div className="p-3 bg-white/5 border-l-2 border-resolve-gold text-[11px] text-resolve-gold font-bold flex-1">
+                          <div className="p-3 bg-white/5 border-l-2 border-resolve-gold text-[11px] text-resolve-gold font-bold flex-1 flex items-center">
                             // BEM-VINDO AO MEU WORKSPACE CRIATIVO
                           </div>
                           <a 
                             href="https://docs.google.com/document/d/1-v7VZzDUMyw4xUbnPdPXpUKL7sVWzWyx6tqB60qcWO0/edit?usp=sharing" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 bg-resolve-gold text-resolve-bg text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform"
+                            className="flex items-center gap-2 px-4 py-2 bg-resolve-gold text-resolve-bg text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform shrink-0"
                           >
                             <FileText size={14} /> Ver Currículo
+                          </a>
+                        </div>
+
+                        <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <a 
+                            href="https://www.canva.com/design/DAF95mGPPPA/6AnHJOYfwFyfBKpr9G46KQ/view?embed#1" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-1.5 px-2 py-2 bg-white/5 border border-white/10 rounded-sm text-[8.5px] font-black uppercase tracking-tight text-white/80 hover:bg-white/10 hover:border-resolve-teal hover:text-resolve-teal transition-all group whitespace-nowrap"
+                          >
+                            <Folder size={12} className="text-resolve-teal group-hover:scale-110 transition-transform shrink-0" />
+                            <span>Portfólio 1º Ano</span>
+                            <ExternalLink size={9} className="opacity-40 group-hover:opacity-100 transition-opacity shrink-0" />
+                          </a>
+
+                          <a 
+                            href="https://sites.google.com/estudante.sesisenai.org.br/pingo/in%C3%ADcio" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-1.5 px-2 py-2 bg-white/5 border border-white/10 rounded-sm text-[8.5px] font-black uppercase tracking-tight text-white/80 hover:bg-white/10 hover:border-resolve-gold hover:text-resolve-gold transition-all group whitespace-nowrap"
+                          >
+                            <Folder size={12} className="text-resolve-gold group-hover:scale-110 transition-transform shrink-0" />
+                            <span>Portfólio 2º Ano</span>
+                            <ExternalLink size={9} className="opacity-40 group-hover:opacity-100 transition-opacity shrink-0" />
                           </a>
                         </div>
                       </div>
